@@ -223,7 +223,7 @@ class Woo_stamped_public {
 			}
 		}
 
-        echo sprintf('<div id="stamped-main-widget" class="stamped stamped-main-widget" data-product-id="%d" data-product-sku="%s" data-name="%s" data-url="%s" data-image-url="%s" data-widget-language="">%s</div>', $product_id, $product_sku, $product_title, get_the_permalink(), $img, $content); // data-description="%s" / $desc
+        echo sprintf('<div id="stamped-main-widget" class="stamped stamped-main-widget" data-product-id="%d" data-product-sku="%s" data-name="%s" data-url="%s" data-image-url="%s" data-widget-language="">%s</div>', $product_id, $product_sku, $product_title, get_the_permalink($product_id), $img, $content); // data-description="%s" / $desc
     }
 
     /**
@@ -248,7 +248,7 @@ class Woo_stamped_public {
            
         }
 
-        echo sprintf('<span class="stamped-product-reviews-badge" data-id="%d" data-name="%s" data-product-sku="%s" data-url="%s"></span>', $product_id, $product_title, $product_sku, get_the_permalink());
+        echo sprintf('<span class="stamped-product-reviews-badge" data-id="%d" data-name="%s" data-product-sku="%s" data-url="%s"></span>', $product_id, $product_title, $product_sku, get_the_permalink($product_id));
     }
 
     public static function Woo_stamped_review_badge_single_product() {
@@ -264,8 +264,8 @@ class Woo_stamped_public {
 			$product_sku = $product->get_sku();
 		}
 
-        echo sprintf('<span class="stamped-product-reviews-badge stamped-main-badge" data-id="%d" data-name="%s" data-product-sku="%s" data-url="%s"></span>', $product_id, $product_title, $product_sku, get_the_permalink());
-        echo sprintf('<span class="stamped-product-reviews-badge stamped-main-badge" data-id="%d" data-name="%s" data-product-sku="%s" data-url="%s" data-type="qna" style="display:none;"></span>', $product_id, $product_title, $product_sku, get_the_permalink());
+        echo sprintf('<span class="stamped-product-reviews-badge stamped-main-badge" data-id="%d" data-name="%s" data-product-sku="%s" data-url="%s"></span>', $product_id, $product_title, $product_sku, get_the_permalink($product_id));
+        echo sprintf('<span class="stamped-product-reviews-badge stamped-main-badge" data-id="%d" data-name="%s" data-product-sku="%s" data-url="%s" data-type="qna" style="display:none;"></span>', $product_id, $product_title, $product_sku, get_the_permalink($product_id));
     }
 
     public static function Woo_stamped_aggregate_rating($data) {
